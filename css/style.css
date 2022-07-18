@@ -407,6 +407,31 @@ fieldset {
   margin-right: 14px;
 }
 
+.ad-form__slider.noUi-target:not(#fake-id) {
+  width: calc(100% - 20px);
+  height: 5px;
+  transform: translateY(-2px);
+}
+
+.ad-form__slider:not(#fake-id) .noUi-connect {
+  background-color: #353535;
+}
+
+.ad-form__slider:not(#fake-id) .noUi-handle {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  right: -5px;
+  top: -5px;
+  cursor: grab;
+  background-color: #999999;
+}
+
+.ad-form__slider:not(#fake-id) .noUi-handle::after,
+.ad-form__slider:not(#fake-id) .noUi-handle::before {
+  display: none;
+}
+
 .features legend {
   padding-bottom: 5px;
 }
@@ -573,14 +598,22 @@ fieldset {
 }
 
 .ad-form__photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
   margin-right: 10px;
   margin-bottom: 10px;
+  padding: 0 15px 0 10px;
 
-  width: 70px;
+  min-width: 70px;
   height: 70px;
 
-  background-color: #e4e4de;
   border-radius: 5px;
+  background-color: #e4e4de;
 }
 
 .ad-form__element--submit {
@@ -1009,4 +1042,10 @@ fieldset {
 
 .hidden {
   display: none;
+}
+
+.js-validation__error-text {
+  font-size: 12px;
+  padding: 1px 0 0 2px;
+  color: red;
 }
